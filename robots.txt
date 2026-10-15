@@ -1,0 +1,3 @@
+# EUIPO başvurusuna kadar (öneri 16–17 Kasım 2026) arama motorlarına kapalı; açılış sayfasıyla (18 Kasım) açılır.
+User-agent: *
+Disallow: /

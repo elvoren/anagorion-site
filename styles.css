@@ -1,0 +1,64 @@
+/* Anagorion — "yakında" sayfası. Dış kaynak (font, betik, ölçüm) yok. */
+:root {
+  --gece: #1F2A44;
+  --harabe: #5E6B78;
+  --sis: #8FA3B0;
+  --amber: #F2A541;
+  --kagit: #F4EFE6;
+  --soluk: #B9C3CC;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  background: var(--gece);
+  color: var(--kagit);
+  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--kagit); text-decoration-color: rgba(244, 239, 230, .35); text-underline-offset: 3px; }
+a:hover { text-decoration-color: var(--amber); }
+
+/* Açılış: soğuk sisli gece, ortada tek sıcak ışık */
+body.ana {
+  display: flex; flex-direction: column; min-height: 100vh; min-height: 100svh;
+  background:
+    radial-gradient(ellipse 60% 45% at 50% 62%, rgba(242, 165, 65, .30), rgba(242, 165, 65, 0) 70%),
+    linear-gradient(180deg, #2A3650 0%, var(--gece) 45%, #18213A 100%);
+}
+.sahne {
+  position: relative; flex: 1; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center; padding: 48px 16px;
+}
+.isik {
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--amber);
+  box-shadow: 0 0 18px 6px rgba(242, 165, 65, .55), 0 0 80px 30px rgba(242, 165, 65, .18);
+  margin-bottom: 36px;
+  animation: nefes 4s ease-in-out infinite;
+}
+@keyframes nefes { 50% { box-shadow: 0 0 22px 8px rgba(242, 165, 65, .65), 0 0 110px 40px rgba(242, 165, 65, .22); } }
+@media (prefers-reduced-motion: reduce) { .isik { animation: none; } }
+.ad {
+  margin: 0; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  font-size: clamp(30px, 7vw, 64px); line-height: 1.1;
+}
+.durum { margin: 18px 0 0; color: var(--amber); font-size: clamp(15px, 2.4vw, 19px); letter-spacing: .06em; }
+.ayrac { margin: 0 .6em; color: var(--sis); }
+.studyo { margin: 40px 0 0; color: var(--soluk); font-size: 13px; letter-spacing: .18em; text-transform: uppercase; }
+.alt {
+  display: flex; flex-wrap: wrap; gap: 8px 12px; justify-content: center;
+  padding: 18px 16px 24px; color: var(--soluk); font-size: 13px;
+}
+
+/* Metin sayfaları (gizlilik, 404) */
+body.metin { background: var(--gece); }
+.kutu { max-width: 720px; margin: 0 auto; padding: 40px 16px 64px; }
+.kutu h1 { font-size: 26px; margin: 0 0 4px; }
+.kutu h2 { font-size: 18px; margin: 32px 0 8px; color: var(--amber); }
+.kutu p, .kutu li { color: #E4DFD6; }
+.kutu .tarih { color: var(--soluk); font-size: 14px; margin: 0 0 24px; }
+.kutu hr { border: 0; border-top: 1px solid rgba(185, 195, 204, .25); margin: 40px 0; }
+.ust { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px; max-width: 720px; margin: 0 auto; }
+.ust a { text-decoration: none; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; font-size: 14px; }
+.diller { font-size: 14px; color: var(--soluk); }
+.diller a { margin-left: 10px; text-transform: none; letter-spacing: 0; font-weight: 400; }
